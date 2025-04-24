@@ -12,7 +12,7 @@ const App = () => {
     useEffect(() => {
         const fetchTrades = async () => {
             try {
-                const response = await fetch('http://localhost:3001/trades');
+                const response = await fetch('https://trading-journal-api-8jrj.onrender.com');
                 console.log('Response:', response);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
