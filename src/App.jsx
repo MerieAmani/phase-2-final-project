@@ -9,9 +9,8 @@ const App = () => {
     const [trades, setTrades] = useState([]); // Initialize with an empty array
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // Fetch trades from the API when the component mounts
     useEffect(() => {
-        fetch('http://localhost:3000/trades') // Replace with your API endpoint
+        fetch('http://localhost:3000/trades')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch trades');
