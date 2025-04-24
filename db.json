@@ -1,0 +1,26 @@
+[
+    {
+        "pair": "EUR/USD",
+        "entryPrice": 1.08,
+        "exitPrice": 1.09,
+        "outcome": "win",
+        "date": "2025-03-26",
+        "profit": 50,
+        "direction": "buy",
+        "rr": 2,
+        "notes": "Breaker + FVG entry",
+        "duration": "01:30"
+    },
+    {
+        "pair": "GBP/USD",
+        "entryPrice": 1.26,
+        "exitPrice": 1.25,
+        "outcome": "win",
+        "date": "2025-03-27",
+        "profit": 75,
+        "direction": "sell",
+        "rr": 1.5,
+        "notes": "News manip",
+        "duration": "00:45"
+    }
+]
