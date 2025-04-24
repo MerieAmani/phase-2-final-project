@@ -6,23 +6,27 @@ import StatsPage from './pages/StatsPage';
 import Footer from './components/Footer';
 
 const App = () => {
-    const [trades, setTrades] = useState([]); // Initialize with an empty array
+    const [trades, setTrades] = useState([]);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:3000/trades')
-            .then((response) => {
+        const fetchTrades = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/trades');
+                console.log('Response:', response);
                 if (!response.ok) {
-                    throw new Error('Failed to fetch trades');
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                return response.json();
-            })
-            .then((data) => {
-                console.log('Fetched trades:', data); // for debbuging
+                const data = await response.json();
+                console.log('Fetched trades:', data);
                 setTrades(data);
-            })
-            .catch((error) => console.error('Error fetching trades:', error));
-    }, []); 
+            } catch (error) {
+                console.error('Error fetching trades:', error);
+            }
+        };
+
+        fetchTrades();
+    }, []);
 
     useEffect(() => {
         if (isDarkMode) {

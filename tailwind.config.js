@@ -1,4 +1,3 @@
-
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -6,6 +5,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  darkMode: 'class',
   plugins: [],
 };
 
